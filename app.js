@@ -28,5 +28,5 @@ mongoose.connect(process.env.DB_CONNECTION,
 
 
 app.listen (
-    8000, () => console.log('Server has started')
+    3000, () => console.log('Server has started')
 )
