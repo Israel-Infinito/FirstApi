@@ -49,6 +49,19 @@ router.delete('/:postId', async (req, res) =>{
     }
 });
 
+//This helps to edit and update information about a user in the database
+router.patch('/:postId', async (req, res) => {
+    try{
+        const updatedPost = await Post.updateOne( 
+        { _id: req.params.postId},
+        {$set: {title: req.body.title}
+    });
+        res.json(updatedPost);
+    }catch(err){
+        res.json({message: err});
+    }
+});
+
 
 
 module.exports = router;
